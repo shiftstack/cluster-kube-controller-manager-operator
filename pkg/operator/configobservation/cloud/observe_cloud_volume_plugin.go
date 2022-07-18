@@ -32,7 +32,7 @@ func ObserveCloudVolumePlugin(genericListers configobserver.Listers, recorder ev
 		return existingConfig, append(errs, err)
 	}
 
-	external, err := cloudprovider.IsCloudProviderExternal(listers, infrastructure.Status.PlatformStatus)
+	external, err := cloudprovider.IsCloudProviderExternal(listers, infrastructure)
 	if err != nil {
 		return existingConfig, append(errs, err)
 	}
